@@ -7,11 +7,15 @@
 //
 
 import UIKit
-
+import iOSAgent
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        var config = AgentConfigBuilder().withServerUrl(URL(string:"http://127.0.0.1:8200")!).build()
+        Agent.start(with: config)
+
+        
         // Override point for customization after application launch.
         Network.shared.apollo.fetch(query: LaunchListQuery()) { result in
           switch result {

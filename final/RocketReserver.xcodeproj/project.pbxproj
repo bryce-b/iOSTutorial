@@ -30,6 +30,9 @@
 		9B8B0F34237CE9DF001326EB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F33237CE9DF001326EB /* Network.swift */; };
 		9B97EF1E237E0D9C00A714ED /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B97EF1D237E0D9C00A714ED /* SDWebImage */; };
 		9B97EF20237E133D00A714ED /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */; };
+		F6FDC07128CA57B60067CE05 /* CPUSampler in Frameworks */ = {isa = PBXBuildFile; productRef = F6FDC07028CA57B60067CE05 /* CPUSampler */; };
+		F6FDC07328CA57B60067CE05 /* MemorySampler in Frameworks */ = {isa = PBXBuildFile; productRef = F6FDC07228CA57B60067CE05 /* MemorySampler */; };
+		F6FDC07528CA57B60067CE05 /* iOSAgent in Frameworks */ = {isa = PBXBuildFile; productRef = F6FDC07428CA57B60067CE05 /* iOSAgent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,8 +69,11 @@
 			files = (
 				9B97EF1E237E0D9C00A714ED /* SDWebImage in Frameworks */,
 				33D3ED9D270CC44100F6C07C /* ApolloWebSocket in Frameworks */,
+				F6FDC07128CA57B60067CE05 /* CPUSampler in Frameworks */,
 				33D3ED9C270CC44100F6C07C /* Apollo in Frameworks */,
+				F6FDC07328CA57B60067CE05 /* MemorySampler in Frameworks */,
 				9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */,
+				F6FDC07528CA57B60067CE05 /* iOSAgent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +148,9 @@
 				9B685F53238BE6D70084DA15 /* KeychainSwift */,
 				33637B9E270270AA00298B4C /* Apollo */,
 				33637BA0270270AA00298B4C /* ApolloWebSocket */,
+				F6FDC07028CA57B60067CE05 /* CPUSampler */,
+				F6FDC07228CA57B60067CE05 /* MemorySampler */,
+				F6FDC07428CA57B60067CE05 /* iOSAgent */,
 			);
 			productName = RocketReserver;
 			productReference = 9B8B0EF2237CE6A8001326EB /* RocketReserver.app */;
@@ -175,6 +184,7 @@
 				9B97EF1C237E0D9C00A714ED /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				9B685F52238BE6D70084DA15 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				33637B9D270270AA00298B4C /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				F6FDC06F28CA57B60067CE05 /* XCRemoteSwiftPackageReference "apm-agent-ios" */,
 			);
 			productRefGroup = 9B8B0EF3237CE6A8001326EB /* Products */;
 			projectDirPath = "";
@@ -463,6 +473,14 @@
 				minimumVersion = 5.3.1;
 			};
 		};
+		F6FDC06F28CA57B60067CE05 /* XCRemoteSwiftPackageReference "apm-agent-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elastic/apm-agent-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -485,6 +503,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B97EF1C237E0D9C00A714ED /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		F6FDC07028CA57B60067CE05 /* CPUSampler */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6FDC06F28CA57B60067CE05 /* XCRemoteSwiftPackageReference "apm-agent-ios" */;
+			productName = CPUSampler;
+		};
+		F6FDC07228CA57B60067CE05 /* MemorySampler */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6FDC06F28CA57B60067CE05 /* XCRemoteSwiftPackageReference "apm-agent-ios" */;
+			productName = MemorySampler;
+		};
+		F6FDC07428CA57B60067CE05 /* iOSAgent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6FDC06F28CA57B60067CE05 /* XCRemoteSwiftPackageReference "apm-agent-ios" */;
+			productName = iOSAgent;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
